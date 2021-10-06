@@ -10,6 +10,7 @@ import { ListDivider } from "../../components/ListDivider";
 import { CategorySelect } from "../../components/CategorySelect";
 
 import { styles } from "./styles";
+import { Background } from "../../components/Background";
 
 export function Home() {
     const [category, setCategory] = useState('')
@@ -48,7 +49,7 @@ export function Home() {
     }
 
     return (
-        <View>
+        <Background>
             <View style={styles.header}>
                 <Profile />
                 <ButtonAdd onPress={handleAppointmentCreate}/>
@@ -59,9 +60,7 @@ export function Home() {
                 setCategory={handleCategorySelect}
             />
 
-            <View style={styles.content}>
-                <ListHeader title='Partidas Agendadas' subtitle='Total 6'/>
-            </View>
+            <ListHeader title='Partidas Agendadas' subtitle='Total 6'/>
 
             <FlatList 
                 data={appointments}
@@ -73,9 +72,10 @@ export function Home() {
                     />
                 )}
                 ItemSeparatorComponent={() => <ListDivider/>}
+                contentContainerStyle={{paddingBottom: 69}}
                 style={styles.matches}
                 showsVerticalScrollIndicator={false}
             />
-        </View>
+        </Background>
     );
 }

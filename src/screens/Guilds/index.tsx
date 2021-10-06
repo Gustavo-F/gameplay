@@ -23,7 +23,7 @@ export function Guilds({handleGuildSelected}: Props) {
             name: 'Lendários',
             icon: 'image.png',
             owner: true,
-        }
+        },
     ]
     
     return (
@@ -38,7 +38,9 @@ export function Guilds({handleGuildSelected}: Props) {
                     />
                 )}
                 showsVerticalScrollIndicator={false}
-                ItemSeparatorComponent={() => <ListDivider />}
+                ItemSeparatorComponent={() => <ListDivider isCentered={true} />}
+                ListHeaderComponent={<ListDivider isCentered={true} />}
+                contentContainerStyle={{paddingBottom: 68, paddingTop: 104}}
                 style={styles.guilds}
             />
         </View>
