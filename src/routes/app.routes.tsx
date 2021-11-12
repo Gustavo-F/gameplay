@@ -11,7 +11,7 @@ import { styles } from "../components/Background/styles";
 
 const { Navigator, Screen } = createStackNavigator();
 
-export function AuthRoutes() {
+export function AppRoutes() {
     const {secondary80, secondary100} = theme.colors
 
     return (
